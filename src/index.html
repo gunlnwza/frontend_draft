@@ -9,14 +9,14 @@
 <body class="bg-gray-200 text-black">
 
   <!-- Main Content -->
-  <main class="max-w-2xl mx-auto p-6">
+  <main class="max-w-2xl mx-auto p-4 font-normal">
     <!-- Avatar + username card -->
     <section class="grid grid-cols-[1fr_4fr] border border-slate-600 rounded-lg">
-      <div class="bg-teal-700">
-        <img></img>
+      <div class="border-r border-slate-600 p-4">
+        <img src="/assets/user.png" alt="User avatar" class="w-full aspect-square object-cover rounded-l-lg"></img>
       </div>
-      <div class="m-10">
-        <p class="text-3xl mb-2">Username</p>
+      <div class="mt-4 ml-4 mb-4">
+        <p class="text-4xl mb-2">nteechar</p>
         <div class="grid grid-cols-3">
           <div>
             <h2 class="text-2xl">Rank</h2>
@@ -35,7 +35,7 @@
     </section>
 
     <!-- Win, loss, win_rate card -->
-    <section class="mt-5 mb-5 p-5 grid grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg">
+    <section class="mt-5 mb-5 p-5 grid place-items-center grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg">
       <div>
         <h2 class="text-2xl">Win</h2>
         <p>100</p>
@@ -47,25 +47,37 @@
       <div>
         <h2 class="text-2xl">Win rate</h2>
         <p>100%</p>
+      </div>
     </section>
 
     <!-- Match history card, table of matches -->
     <section class="grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg p-5">  <!-- Obviously add a few more data, like time_played, scores -->
-      <h2 class="text-2xl">Game History</h2>
-      <table>
-        <div class="bg-slate-400 grid grid-cols-2">
-          <h2 class="">opponent_libft</h2>
-          <p>Win</p>
-        </div>
-        <div class="grid grid-cols-2">
-          <h2 class="">opponent_fractol</h2>
-          <p>Loss</p>
-        </div>
-        <div class="bg-slate-400 grid grid-cols-2">
-          <h2 class="">opponent_minishell</h2>
-          <p>Win</p>
-        </div>
-      </table>
+      <h2 class="text-2xl pb-4">Game History</h2>
+
+      <div class="bg-slate-300 grid grid-cols-2">
+        <a href="#" class="hover:text-teal-700 text-lg">opponent_ft_transcendence</a>
+        <p>In a match (spectate?)</p>
+      </div>
+      <div class="bg-slate-400 grid grid-cols-2">
+        <a href="#" class="hover:text-teal-700 text-lg">opponent_inception</a>
+        <p>Loss</p>
+      </div>
+      <div class="bg-slate-300 grid grid-cols-2">
+        <a href="#" class="hover:text-teal-700 text-lg">opponent_minirt</a>
+        <p>Win</p>
+      </div>
+      <div class="bg-slate-400 grid grid-cols-2">
+        <a href="#" class="hover:text-teal-700 text-lg">opponent_minishell</a>
+        <p>Loss</p>
+      </div>
+      <div class="bg-slate-300 grid grid-cols-2">
+        <a href="#" class="hover:text-teal-700 text-lg">opponent_fractol</a>
+        <p>Win</p>
+      </div>
+      <div class="bg-slate-400 grid grid-cols-2">
+        <a href="#" class="hover:text-teal-700 text-lg">opponent_libft</a>
+        <p>Win</p>
+      </div>
     </section>
   </main>
 
