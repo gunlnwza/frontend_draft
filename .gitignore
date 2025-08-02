@@ -1,0 +1,6 @@
+# Packages
+node_modules
+
+# Ignore everything in dist/, but not .gitkeep
+dist/*
+!dist/.gitkeep
