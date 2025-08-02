@@ -1,58 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>ft_transcendence User</title>
+  <title>ft_transcendence</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-white text-black dark:bg-neutral-900 dark:text-neutral-200 transition-colors duration-300" id="body">
-
-  <!-- Toggle Dark Mode -->
-  <div class="flex justify-end p-4">
-    <button onclick="document.getElementById('body').classList.toggle('dark')"
-            class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded hover:bg-neutral-300 dark:hover:bg-neutral-700 transition">
-      🌓 Toggle Theme
-    </button>
-  </div>
+<body class="bg-gray-200 text-black">
 
   <!-- Main Content -->
   <main class="max-w-2xl mx-auto p-6">
-    <h1 class="text-3xl font-bold text-center mb-6">yourusername</h1>
-
-    <section class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center text-sm">
-      <div>
-        <p class="text-neutral-400">Tests taken</p>
-        <p class="text-xl font-semibold">420</p>
+    <!-- Avatar + username card -->
+    <section class="grid grid-cols-[1fr_4fr] border border-slate-600 rounded-lg">
+      <div class="bg-teal-700">
+        <img></img>
       </div>
-      <div>
-        <p class="text-neutral-400">Avg WPM</p>
-        <p class="text-xl font-semibold">69</p>
-      </div>
-      <div>
-        <p class="text-neutral-400">Accuracy</p>
-        <p class="text-xl font-semibold">98.5%</p>
+      <div class="m-10">
+        <p class="text-3xl mb-2">Username</p>
+        <div class="grid grid-cols-3">
+          <div>
+            <h2 class="text-2xl">Rank</h2>
+            <p>42</p>
+          </div>
+          <div>
+            <h2 class="text-2xl">Score</h2>
+            <p>9000</p>
+          </div>
+          <div>
+            <h2 class="text-2xl">Status</h2>
+            <p>Online</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <hr class="my-6 border-neutral-300 dark:border-neutral-700" />
+    <!-- Win, loss, win_rate card -->
+    <section class="mt-5 mb-5 p-5 grid grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg">
+      <div>
+        <h2 class="text-2xl">Win</h2>
+        <p>100</p>
+      </div>
+      <div>
+        <h2 class="text-2xl">Loss</h2>
+        <p>0</p>
+      </div>
+      <div>
+        <h2 class="text-2xl">Win rate</h2>
+        <p>100%</p>
+    </section>
 
-    <section>
-      <h2 class="text-lg font-semibold mb-2">Recent Results</h2>
-      <ul class="space-y-2">
-        <li class="bg-neutral-100 dark:bg-neutral-800 p-3 rounded flex justify-between">
-          <span>English 60s</span>
-          <span class="font-mono">72 WPM · 99.1%</span>
-        </li>
-        <li class="bg-neutral-100 dark:bg-neutral-800 p-3 rounded flex justify-between">
-          <span>Custom Quote</span>
-          <span class="font-mono">68 WPM · 97.8%</span>
-        </li>
-        <li class="bg-neutral-100 dark:bg-neutral-800 p-3 rounded flex justify-between">
-          <span>Thai Words</span>
-          <span class="font-mono">75 WPM · 98.9%</span>
-        </li>
-      </ul>
+    <!-- Match history card, table of matches -->
+    <section class="grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg p-5">  <!-- Obviously add a few more data, like time_played, scores -->
+      <h2 class="text-2xl">Game History</h2>
+      <table>
+        <div class="bg-slate-400 grid grid-cols-2">
+          <h2 class="">opponent_libft</h2>
+          <p>Win</p>
+        </div>
+        <div class="grid grid-cols-2">
+          <h2 class="">opponent_fractol</h2>
+          <p>Loss</p>
+        </div>
+        <div class="bg-slate-400 grid grid-cols-2">
+          <h2 class="">opponent_minishell</h2>
+          <p>Win</p>
+        </div>
+      </table>
     </section>
   </main>
 
