@@ -38,8 +38,8 @@
   </header>
 
   <div class="flex min-h-screen">
-    <!-- friends list, in left column -->
-    <aside class="w-64 bg-white border-r border-gray-300 p-4 space-y-2">
+    <!-- left column friends list -->
+    <aside class="w-60 bg-white border-r border-gray-300 p-4 space-y-2">
       <h2 class="text-lg font-semibold mb-4">Friends List</h2>
       <ul class="space-y-2">
         <li><a href="#" class="text-teal-700 hover:underline">opponent_libft</a></li>
@@ -50,7 +50,8 @@
       </ul>
     </aside>    
   
-    <main class="max-w-2xl mx-auto p-6 space-y-6">
+    <!-- main right side -->
+    <main class="w-full max-w-6xl mx-auto p-6 space-y-6">
       <!-- Avatar + username card -->
       <section class="grid grid-cols-[auto_1fr] gap-6 bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
         <div>
@@ -120,17 +121,17 @@
       </section>
   
       <section class="grid grid-cols-3 gap-4">
-        <div class="flex flex-col items-center justify-center card h-24 text-center p-4 hover:bg-gray-100 transition cursor-pointer">
+        <div class="flex flex-col items-center justify-center card h-24 text-center p-4 space-y-2 hover:bg-gray-100 transition cursor-pointer">
           <p class="font-semibold text-lg">Local Game</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-keyboard-icon lucide-keyboard"><path d="M10 8h.01"/><path d="M12 12h.01"/><path d="M14 8h.01"/><path d="M16 12h.01"/><path d="M18 8h.01"/><path d="M6 8h.01"/><path d="M7 16h10"/><path d="M8 12h.01"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg>
         </div>
       
-        <div class="flex flex-col items-center justify-center card h-24 text-center p-4 hover:bg-gray-100 transition cursor-pointer">
+        <div class="flex flex-col items-center justify-center card h-24 text-center p-4 space-y-2 hover:bg-gray-100 transition cursor-pointer">
           <p class="font-semibold text-lg">Remote Game</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
         </div>
       
-        <div class="flex flex-col items-center justify-center card h-24 text-center p-4 hover:bg-gray-100 transition cursor-pointer">
+        <div class="flex flex-col items-center justify-center card h-24 text-center p-4 space-y-2 hover:bg-gray-100 transition cursor-pointer">
           <p class="font-semibold text-lg">Tournament</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>
         </div>
@@ -140,21 +141,6 @@
   </div>
 
 </body>
-<script>
-  const userButton = document.getElementById('userMenuButton');
-  const dropdown = document.getElementById('userDropdown');
-
-  userButton.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-  });
-
-  // Optional: hide dropdown when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!userButton.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.add('hidden');
-    }
-  });
-</script>
 </html>
 
 <!--
