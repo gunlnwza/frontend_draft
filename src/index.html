@@ -8,16 +8,32 @@
 </head>
 <body class="bg-neutral-100 text-neutral-900 font-sans">
 
-  <header class="flex justify-between items-center p-4 border-b border-gray-300 bg-white">
+  <header class="flex justify-between items-center p-4 border-b border-gray-300 bg-white relative">
     <h1 class="text-xl font-bold text-gray-800">ft_transcendence</h1>
   
-    <div class="flex items-center gap-4">
-      <!-- setting -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
-      <!-- user menu -->
-      <p class="font-medium">nteechar</p>
-      <!-- log out -->
-      <button class="text-red-500 hover:underline text-sm">Log out</button>
+    <div class="flex items-center gap-4 relative">
+      <!-- setting icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings">
+        <!-- your settings path here, TODO: talk to backends -->
+        <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+
+      <!-- user menu with hover dropdown -->
+      <div class="relative group">
+        <p class="font-medium text-gray-800 cursor-pointer">
+          nteechar
+        </p>
+
+        <!-- Dropdown menu appears on hover -->
+        <div class="absolute right-0 w-32 bg-white border border-gray-300 rounded shadow-md
+                    opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto
+                    transition duration-150 z-10">
+          <button class="block w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-gray-100">
+            Log out
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -124,6 +140,21 @@
   </div>
 
 </body>
+<script>
+  const userButton = document.getElementById('userMenuButton');
+  const dropdown = document.getElementById('userDropdown');
+
+  userButton.addEventListener('click', () => {
+    dropdown.classList.toggle('hidden');
+  });
+
+  // Optional: hide dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!userButton.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('hidden');
+    }
+  });
+</script>
 </html>
 
 <!--
