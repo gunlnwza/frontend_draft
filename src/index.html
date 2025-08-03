@@ -7,92 +7,125 @@
   <link href="../dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-neutral-100 text-neutral-900 font-sans">
-
-  <main class="max-w-2xl mx-auto p-6 space-y-6">
-
-    <!-- friends list, in left column -->
-
-    <!-- log out -->
-
-    <!-- Avatar + username card -->
-    <section class="grid grid-cols-[auto_1fr] gap-6 bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
-      <div>
-        <img src="/assets/user.png" alt="User avatar" class="w-24 h-24 object-cover rounded-lg" />
-      </div>
-      <div class="flex flex-col justify-center space-y-2">
-        <h1 class="text-3xl font-bold">nteechar</h1>
-        <div class="grid grid-cols-3 gap-4 text-center text-sm">
-          <div>
-            <p class="text-neutral-500">Rank</p>
-            <p class="text-lg font-semibold">42</p>
-          </div>
-          <div>
-            <p class="text-neutral-500">Score</p>
-            <p class="text-lg font-semibold">9000</p>
-          </div>
-          <div>
-            <p class="text-neutral-500">Status</p>
-            <p class="inline-block px-2 py-0.5 bg-green-200 text-green-800 text-xs rounded-full">Online</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Win/Loss/Win rate -->
-    <section class="grid grid-cols-3 gap-4 bg-white border border-neutral-300 rounded-xl shadow-sm p-6 text-center">
-      <div>
-        <p class="text-neutral-500 text-sm">Win</p>
-        <p class="text-lg font-semibold">100</p>
-      </div>
-      <div>
-        <p class="text-neutral-500 text-sm">Loss</p>
-        <p class="text-lg font-semibold">0</p>
-      </div>
-      <div>
-        <p class="text-neutral-500 text-sm">Win rate</p>  <!-- todo: make donut -->
-        <p class="text-lg font-semibold">100%</p>
-      </div>
-    </section>
-
-    <!-- Match History -->
-    <section class="bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
-      <h2 class="text-xl font-semibold mb-4">Game History</h2>
-
-      <div class="divide-y divide-neutral-200">  <!-- can use ts's ?map? -->
-        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-          <a href="#" class="text-teal-700 hover:underline">opponent_inception</a>
-          <p class="text-red-500 font-medium">Loss</p>
-        </div>
-        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-          <a href="#" class="text-teal-700 hover:underline">opponent_minirt</a>
-          <p class="text-green-600 font-medium">Win</p>
-        </div>
-        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-          <a href="#" class="text-teal-700 hover:underline">opponent_minishell</a>
-          <p class="text-red-500 font-medium">Loss</p>
-        </div>
-        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-          <a href="#" class="text-teal-700 hover:underline">opponent_fractol</a>
-          <p class="text-green-600 font-medium">Win</p>
-        </div>
-        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-          <a href="#" class="text-teal-700 hover:underline">opponent_libft</a>
-          <p class="text-green-600 font-medium">Win</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- setting, in lower right -->
-
+  
+  <header class="flex justify-end items-center gap-4 p-4">
+    <!-- setting, top right -->
     <section>
-      <!-- local game card -->
-
-      <!-- remote game, link to ['create a room' and 'join a room'] -->
-
-      <!-- tournament mode -->
+      <p class="text-sm text-gray-600">⚙️ Gear</p>
     </section>
 
-  </main>
+    <!-- user menu, top right -->
+    <section>
+      <p class="font-medium">nteechar</p>
+    </section>
+
+    <!-- log out, top right -->
+    <section>
+      <button class="text-red-500 hover:underline text-sm">Log out</button>
+    </section>
+  </header>
+
+  <div class="flex min-h-screen">
+    <!-- friends list, in left column -->
+    <aside class="w-64 bg-white border-r border-gray-300 p-4">
+      <p class="font-semibold mb-2">Friends List</p>
+      <a href="#" class="text-teal-700 hover:underline">opponent_libft</a>
+      <a href="#" class="text-teal-700 hover:underline">opponent_fractol</a>
+      <a href="#" class="text-teal-700 hover:underline">opponent_minishell</a>
+      <a href="#" class="text-teal-700 hover:underline">opponent_minirt</a>
+      <a href="#" class="text-teal-700 hover:underline">opponent_inception</a>
+    </aside>
+  
+    <main class="max-w-2xl mx-auto p-6 space-y-6">
+      <!-- Avatar + username card -->
+      <section class="grid grid-cols-[auto_1fr] gap-6 bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
+        <div>
+          <img src="/assets/user.png" alt="User avatar" class="w-24 h-24 object-cover rounded-lg" />
+        </div>
+        <div class="flex flex-col justify-center space-y-2">
+          <h1 class="text-3xl font-bold">nteechar</h1>
+          <div class="grid grid-cols-3 gap-4 text-center text-sm">
+            <div>
+              <p class="text-neutral-500">Rank</p>
+              <p class="text-lg font-semibold">42</p>
+            </div>
+            <div>
+              <p class="text-neutral-500">Score</p>
+              <p class="text-lg font-semibold">9000</p>
+            </div>
+            <div>
+              <p class="text-neutral-500">Status</p>
+              <p class="inline-block px-2 py-0.5 bg-green-200 text-green-800 text-xs rounded-full">Online</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Win/Loss/Win rate -->
+      <section class="grid grid-cols-3 gap-4 bg-white border border-neutral-300 rounded-xl shadow-sm p-6 text-center">
+        <div>
+          <p class="text-neutral-500 text-sm">Win</p>
+          <p class="text-lg font-semibold">100</p>
+        </div>
+        <div>
+          <p class="text-neutral-500 text-sm">Loss</p>
+          <p class="text-lg font-semibold">0</p>
+        </div>
+        <div>
+          <p class="text-neutral-500 text-sm">Win rate</p>
+          <p class="text-lg font-semibold">100%</p>
+        </div>
+      </section>
+  
+      <!-- Match History -->
+      <section class="bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
+        <h2 class="text-xl font-semibold mb-4">Game History</h2>
+  
+        <div class="divide-y divide-neutral-200">
+          <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+            <a href="#" class="text-teal-700 hover:underline">opponent_inception</a>
+            <p class="text-red-500 font-medium">Loss</p>
+          </div>
+          <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+            <a href="#" class="text-teal-700 hover:underline">opponent_minirt</a>
+            <p class="text-green-600 font-medium">Win</p>
+          </div>
+          <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+            <a href="#" class="text-teal-700 hover:underline">opponent_minishell</a>
+            <p class="text-red-500 font-medium">Loss</p>
+          </div>
+          <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+            <a href="#" class="text-teal-700 hover:underline">opponent_fractol</a>
+            <p class="text-green-600 font-medium">Win</p>
+          </div>
+          <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+            <a href="#" class="text-teal-700 hover:underline">opponent_libft</a>
+            <p class="text-green-600 font-medium">Win</p>
+          </div>
+        </div>
+      </section>
+  
+      <section class="grid grid-cols-3 gap-4">
+        <!-- local game card -->
+        <div class="card h-24 text-center p-4">
+          <p>Local Game</p>
+          <p>/keyboard</p>
+        </div>
+    
+        <!-- remote game, link to ['create a room' and 'join a room'] -->
+        <div class="card h-24 text-center p-4">
+          <p>Remote Game</p>
+          <p>/globe</p>
+        </div>
+
+        <!-- tournament mode -->
+        <div class="card h-24 text-center p-4">
+          <p>Tournament</p>
+          <p>/colosseum</p>
+        </div>
+      </section>
+    </main>
+  </div>
 
 </body>
 </html>
