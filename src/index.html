@@ -6,79 +6,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-gray-200 text-black">
+<body class="bg-neutral-100 text-neutral-900 font-sans">
 
-  <!-- Main Content -->
-  <main class="max-w-2xl mx-auto p-4 font-normal">
+  <main class="max-w-2xl mx-auto p-6 space-y-6">
+
+    <!-- friends list, in left column -->
+
+    <!-- log out -->
+
     <!-- Avatar + username card -->
-    <section class="grid grid-cols-[1fr_4fr] border border-slate-600 rounded-lg">
-      <div class="border-r border-slate-600 p-4">
-        <img src="/assets/user.png" alt="User avatar" class="w-full aspect-square object-cover rounded-l-lg"></img>
+    <section class="grid grid-cols-[auto_1fr] gap-6 bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
+      <div>
+        <img src="/assets/user.png" alt="User avatar" class="w-24 h-24 object-cover rounded-lg" />
       </div>
-      <div class="mt-4 ml-4 mb-4">
-        <p class="text-4xl mb-2">nteechar</p>
-        <div class="grid grid-cols-3">
+      <div class="flex flex-col justify-center space-y-2">
+        <h1 class="text-3xl font-bold">nteechar</h1>
+        <div class="grid grid-cols-3 gap-4 text-center text-sm">
           <div>
-            <h2 class="text-2xl">Rank</h2>
-            <p>42</p>
+            <p class="text-neutral-500">Rank</p>
+            <p class="text-lg font-semibold">42</p>
           </div>
           <div>
-            <h2 class="text-2xl">Score</h2>
-            <p>9000</p>
+            <p class="text-neutral-500">Score</p>
+            <p class="text-lg font-semibold">9000</p>
           </div>
           <div>
-            <h2 class="text-2xl">Status</h2>
-            <p>Online</p>
+            <p class="text-neutral-500">Status</p>
+            <p class="inline-block px-2 py-0.5 bg-green-200 text-green-800 text-xs rounded-full">Online</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Win, loss, win_rate card -->
-    <section class="mt-5 mb-5 p-5 grid place-items-center grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg">
+    <!-- Win/Loss/Win rate -->
+    <section class="grid grid-cols-3 gap-4 bg-white border border-neutral-300 rounded-xl shadow-sm p-6 text-center">
       <div>
-        <h2 class="text-2xl">Win</h2>
-        <p>100</p>
+        <p class="text-neutral-500 text-sm">Win</p>
+        <p class="text-lg font-semibold">100</p>
       </div>
       <div>
-        <h2 class="text-2xl">Loss</h2>
-        <p>0</p>
+        <p class="text-neutral-500 text-sm">Loss</p>
+        <p class="text-lg font-semibold">0</p>
       </div>
       <div>
-        <h2 class="text-2xl">Win rate</h2>
-        <p>100%</p>
+        <p class="text-neutral-500 text-sm">Win rate</p>  <!-- todo: make donut -->
+        <p class="text-lg font-semibold">100%</p>
       </div>
     </section>
 
-    <!-- Match history card, table of matches -->
-    <section class="grid-cols-[1fr_1fr_1fr] border border-slate-600 rounded-lg p-5">  <!-- Obviously add a few more data, like time_played, scores -->
-      <h2 class="text-2xl pb-4">Game History</h2>
+    <!-- Match History -->
+    <section class="bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
+      <h2 class="text-xl font-semibold mb-4">Game History</h2>
 
-      <div class="bg-slate-300 grid grid-cols-2">
-        <a href="#" class="hover:text-teal-700 text-lg">opponent_ft_transcendence</a>
-        <p>In a match (spectate?)</p>
-      </div>
-      <div class="bg-slate-400 grid grid-cols-2">
-        <a href="#" class="hover:text-teal-700 text-lg">opponent_inception</a>
-        <p>Loss</p>
-      </div>
-      <div class="bg-slate-300 grid grid-cols-2">
-        <a href="#" class="hover:text-teal-700 text-lg">opponent_minirt</a>
-        <p>Win</p>
-      </div>
-      <div class="bg-slate-400 grid grid-cols-2">
-        <a href="#" class="hover:text-teal-700 text-lg">opponent_minishell</a>
-        <p>Loss</p>
-      </div>
-      <div class="bg-slate-300 grid grid-cols-2">
-        <a href="#" class="hover:text-teal-700 text-lg">opponent_fractol</a>
-        <p>Win</p>
-      </div>
-      <div class="bg-slate-400 grid grid-cols-2">
-        <a href="#" class="hover:text-teal-700 text-lg">opponent_libft</a>
-        <p>Win</p>
+      <div class="divide-y divide-neutral-200">  <!-- can use ts's ?map? -->
+        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+          <a href="#" class="text-teal-700 hover:underline">opponent_inception</a>
+          <p class="text-red-500 font-medium">Loss</p>
+        </div>
+        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+          <a href="#" class="text-teal-700 hover:underline">opponent_minirt</a>
+          <p class="text-green-600 font-medium">Win</p>
+        </div>
+        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+          <a href="#" class="text-teal-700 hover:underline">opponent_minishell</a>
+          <p class="text-red-500 font-medium">Loss</p>
+        </div>
+        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+          <a href="#" class="text-teal-700 hover:underline">opponent_fractol</a>
+          <p class="text-green-600 font-medium">Win</p>
+        </div>
+        <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
+          <a href="#" class="text-teal-700 hover:underline">opponent_libft</a>
+          <p class="text-green-600 font-medium">Win</p>
+        </div>
       </div>
     </section>
+
+    <!-- setting, in lower right -->
+
+    <section>
+      <!-- local game card -->
+
+      <!-- remote game, link to ['create a room' and 'join a room'] -->
+
+      <!-- tournament mode -->
+    </section>
+
   </main>
 
 </body>
