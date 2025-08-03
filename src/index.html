@@ -7,34 +7,32 @@
   <link href="../dist/output.css" rel="stylesheet">
 </head>
 <body class="bg-neutral-100 text-neutral-900 font-sans">
+
+  <header class="flex justify-between items-center p-4 border-b border-gray-300 bg-white">
+    <h1 class="text-xl font-bold text-gray-800">ft_transcendence</h1>
   
-  <header class="flex justify-end items-center gap-4 p-4">
-    <!-- setting, top right -->
-    <section>
+    <div class="flex items-center gap-4">
+      <!-- setting -->
       <p class="text-sm text-gray-600">⚙️ Gear</p>
-    </section>
-
-    <!-- user menu, top right -->
-    <section>
+      <!-- user menu -->
       <p class="font-medium">nteechar</p>
-    </section>
-
-    <!-- log out, top right -->
-    <section>
+      <!-- log out -->
       <button class="text-red-500 hover:underline text-sm">Log out</button>
-    </section>
+    </div>
   </header>
 
   <div class="flex min-h-screen">
     <!-- friends list, in left column -->
-    <aside class="w-64 bg-white border-r border-gray-300 p-4">
-      <p class="font-semibold mb-2">Friends List</p>
-      <a href="#" class="text-teal-700 hover:underline">opponent_libft</a>
-      <a href="#" class="text-teal-700 hover:underline">opponent_fractol</a>
-      <a href="#" class="text-teal-700 hover:underline">opponent_minishell</a>
-      <a href="#" class="text-teal-700 hover:underline">opponent_minirt</a>
-      <a href="#" class="text-teal-700 hover:underline">opponent_inception</a>
-    </aside>
+    <aside class="w-64 bg-white border-r border-gray-300 p-4 space-y-2">
+      <h2 class="text-lg font-semibold mb-4">Friends List</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-teal-700 hover:underline">opponent_libft</a></li>
+        <li><a href="#" class="text-teal-700 hover:underline">opponent_fractol</a></li>
+        <li><a href="#" class="text-teal-700 hover:underline">opponent_minishell</a></li>
+        <li><a href="#" class="text-teal-700 hover:underline">opponent_minirt</a></li>
+        <li><a href="#" class="text-teal-700 hover:underline">opponent_inception</a></li>
+      </ul>
+    </aside>    
   
     <main class="max-w-2xl mx-auto p-6 space-y-6">
       <!-- Avatar + username card -->
@@ -105,27 +103,53 @@
         </div>
       </section>
   
-      <section class="grid grid-cols-3 gap-4">
-        <!-- local game card -->
-        <div class="card h-24 text-center p-4">
-          <p>Local Game</p>
-          <p>/keyboard</p>
+      <section class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="card h-24 text-center p-4 hover:bg-gray-100 transition cursor-pointer">
+          <p class="font-semibold text-lg">Local Game</p>
+          <p class="text-sm text-gray-500">/keyboard</p>
         </div>
-    
-        <!-- remote game, link to ['create a room' and 'join a room'] -->
-        <div class="card h-24 text-center p-4">
-          <p>Remote Game</p>
-          <p>/globe</p>
+      
+        <div class="card h-24 text-center p-4 hover:bg-gray-100 transition cursor-pointer">
+          <p class="font-semibold text-lg">Remote Game</p>
+          <p class="text-sm text-gray-500">/globe</p>
         </div>
-
-        <!-- tournament mode -->
-        <div class="card h-24 text-center p-4">
-          <p>Tournament</p>
-          <p>/colosseum</p>
+      
+        <div class="card h-24 text-center p-4 hover:bg-gray-100 transition cursor-pointer">
+          <p class="font-semibold text-lg">Tournament</p>
+          <p class="text-sm text-gray-500">/colosseum</p>
         </div>
       </section>
+      
     </main>
   </div>
 
 </body>
 </html>
+
+<!--
+
+✅ 4. Typography hierarchy (small change, big result)
+Just bold the right things and reduce unnecessary visual noise.
+
+Only h1, section titles, and values should be bold (font-semibold)
+
+Labels (Rank, Score) → text-sm text-gray-500
+
+Use text-center only when it helps layout 
+
+✅ 5. Add some breathing room
+Add space-y-* or gap-* to vertical stacks — it helps readability a ton.
+
+🤯 Want to really level up?
+Later on, try:
+
+Adding a DARK MODE toggle (super easy with Tailwind’s dark: classes)
+
+Animate the game result rows with transition, hover:scale-[1.01]
+
+Use icons (Lucide, Heroicons, emoji) for rank/status/gear
+
+TODO:
+Dark mode / terminal style
+
+-->
