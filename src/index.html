@@ -77,18 +77,42 @@
       </section>
   
       <!-- Win/Loss/Win rate -->
-      <section class="grid grid-cols-3 gap-4 bg-white border border-neutral-300 rounded-xl shadow-sm p-6 text-center">
+      <section class="grid grid-cols-3 gap-4 place-items-center text-center bg-white border border-neutral-300 rounded-xl shadow-sm p-6 text-center">
         <div>
           <p class="text-neutral-500 text-sm">Win</p>
-          <p class="text-lg font-semibold">100</p>
+          <p class="text-lg font-semibold">60</p>
         </div>
         <div>
           <p class="text-neutral-500 text-sm">Loss</p>
-          <p class="text-lg font-semibold">0</p>
+          <p class="text-lg font-semibold">40</p>
         </div>
-        <div>
-          <p class="text-neutral-500 text-sm">Win rate</p>
-          <p class="text-lg font-semibold">100%</p>
+        <!-- donut -->
+        <div class="w-40 h-40 relative">
+          <!-- Donut background -->
+          <svg viewBox="0 0 36 36" class="w-full h-full rotate-[-90deg]">
+            <!-- full circle (gray background) -->
+            <circle
+              cx="18" cy="18" r="16"
+              fill="none"
+              stroke="#e5e7eb"
+              stroke-width="4"
+            />
+            
+            <!-- win rate arc -->
+            <circle
+              cx="18" cy="18" r="16"
+              fill="none"
+              stroke="#4ade80"
+              stroke-width="4"
+              stroke-dasharray="60, 100"
+            /> <!-- TODO: adjust the percent by 'stroke-dasharray'-->
+          </svg>
+
+          <!-- Center text -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <p class="text-lg font-bold text-gray-800">60%</p> <!-- TODO adjust the percent-->
+            <p class="text-xs text-gray-500">Win rate</p>
+          </div>
         </div>
       </section>
   
