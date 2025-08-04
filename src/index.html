@@ -11,7 +11,7 @@
   <!-- header -->
   <header class="flex justify-between items-center p-4 relative
                 border-b border-gray-300 bg-white">
-    <h1 class="text-xl font-bold text-gray-800">ft_transcendence</h1>
+    <h1 class="text-sitename">ft_transcendence</h1>
   
     <!-- right menu -->
     <div class="flex items-center gap-4 relative">
@@ -24,7 +24,7 @@
 
       <!-- user menu with hover dropdown -->
       <div class="relative group">
-        <p class="font-medium text-gray-800 cursor-pointer">
+        <p class="text-label-sm cursor-pointer">
           nteechar
         </p>
 
@@ -32,7 +32,7 @@
         <div class="absolute right-0 w-32 bg-white border border-gray-300 rounded shadow-md
                     opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto
                     transition duration-150 z-10">
-          <button class="block w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-gray-100">
+          <button class="block w-full text-left px-4 py-2 hover:bg-gray-100 text-sm text-red-500">
             Log out
           </button>
         </div>
@@ -44,18 +44,19 @@
     <!-- left column friends list -->
     <aside class="w-60 p-4 space-y-2
                 bg-white border-r border-gray-300 ">
-      <h2 class="mb-4 text-lg font-semibold">Friends List</h2>
+      <h2 class="text-section-title mb-4">Friends List</h2>
       <ul class="space-y-2">
-        <li><a href="#" class="text-teal-700 hover:underline">opponent_libft</a></li>
-        <li><a href="#" class="text-teal-700 hover:underline">opponent_fractol</a></li>
-        <li><a href="#" class="text-teal-700 hover:underline">opponent_minishell</a></li>
-        <li><a href="#" class="text-teal-700 hover:underline">opponent_minirt</a></li>
-        <li><a href="#" class="text-teal-700 hover:underline">opponent_inception</a></li>
+        <li><a href="#" class="text-other-user">opponent_libft</a></li>
+        <li><a href="#" class="text-other-user">opponent_fractol</a></li>
+        <li><a href="#" class="text-other-user">opponent_minishell</a></li>
+        <li><a href="#" class="text-other-user">opponent_minirt</a></li>
+        <li><a href="#" class="text-other-user">opponent_inception</a></li>
       </ul>
-    </aside>    
+    </aside>
   
     <!-- main right side -->
     <main class="w-full max-w-6xl mx-auto p-6 space-y-6">
+  
       <section class="grid grid-cols-[auto_1fr] gap-6 bg-white border border-neutral-300 rounded-xl shadow-sm p-6">
         <!-- avatar -->
         <div class="relative w-24 h-24">
@@ -66,15 +67,15 @@
 
         <!-- username, general data -->
         <div class="flex flex-col justify-center space-y-2">
-          <h1 class="text-3xl font-bold">nteechar</h1>
-          <div class="grid grid-cols-2 gap-4 text-center text-sm">
+          <h1 class="text-username">nteechar</h1>
+          <div class="grid grid-cols-2 gap-4 text-center">
             <div>
-              <p class="text-neutral-500">Rank</p>
-              <p class="text-lg font-semibold">42</p>
+              <p class="text-stat-label">Rank</p>
+              <p class="text-stat-value">42</p>
             </div>
             <div>
-              <p class="text-neutral-500">Score</p>
-              <p class="text-lg font-semibold">9000</p>
+              <p class="text-stat-label">Score</p>
+              <p class="text-stat-value">9000</p>
             </div>
           </div>
         </div>
@@ -84,12 +85,12 @@
       <section class="grid grid-cols-3 gap-4 p-6 place-items-center text-center
                     bg-white border border-neutral-300 rounded-xl shadow-sm">
         <div>
-          <p class="text-neutral-500 text-sm">Win</p>
-          <p class="text-lg font-semibold">60</p>
+          <p class="text-stat-label">Win</p>
+          <p class="text-stat-value">60</p>
         </div>
         <div>
-          <p class="text-neutral-500 text-sm">Loss</p>
-          <p class="text-lg font-semibold">40</p>
+          <p class="text-stat-label">Loss</p>
+          <p class="text-stat-value">40</p>
         </div>
         <!-- donut -->
         <div class="w-40 h-40 relative">
@@ -115,37 +116,37 @@
 
           <!-- Center text -->
           <div class="absolute inset-0 flex flex-col items-center justify-center">
-            <p class="text-lg font-bold text-gray-800">60%</p> <!-- TODO adjust the percent-->
-            <p class="text-xs text-gray-500">Win rate</p>
+            <p class="text-stat-value">60%</p> <!-- TODO adjust the percent-->
+            <p class="text-stat-label">Win rate</p>
           </div>
         </div>
       </section>
   
       <!-- Match History -->
       <section class="p-6 bg-white border border-neutral-300 rounded-xl shadow-sm">
-        <h2 class="mb-4 text-xl font-semibold">Game History</h2>
+        <h2 class="text-section-title mb-4">Game History</h2>
   
         <!-- TODO: will use map later, connecting to BE -->
         <div class="divide-y divide-neutral-200">
           <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-            <a href="#" class="text-teal-700 hover:underline">opponent_inception</a>
-            <p class="text-red-500 font-medium">Loss</p>
+            <a href="#" class="text-other-user">opponent_inception</a>
+            <p class="text-loss">Loss</p>
           </div>
           <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-            <a href="#" class="text-teal-700 hover:underline">opponent_minirt</a>
-            <p class="text-green-600 font-medium">Win</p>
+            <a href="#" class="text-other-user">opponent_minirt</a>
+            <p class="text-win">Win</p>
           </div>
           <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-            <a href="#" class="text-teal-700 hover:underline">opponent_minishell</a>
-            <p class="text-red-500 font-medium">Loss</p>
+            <a href="#" class="text-other-user">opponent_minishell</a>
+            <p class="text-loss">Loss</p>
           </div>
           <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-            <a href="#" class="text-teal-700 hover:underline">opponent_fractol</a>
-            <p class="text-green-600 font-medium">Win</p>
+            <a href="#" class="text-other-user">opponent_fractol</a>
+            <p class="text-win">Win</p>
           </div>
           <div class="grid grid-cols-2 py-2 hover:bg-neutral-100 transition">
-            <a href="#" class="text-teal-700 hover:underline">opponent_libft</a>
-            <p class="text-green-600 font-medium">Win</p>
+            <a href="#" class="text-other-user">opponent_libft</a>
+            <p class="text-win">Win</p>
           </div>
         </div>
       </section>
@@ -154,7 +155,7 @@
         <a href="local.html" class="block">
           <div class="flex flex-col items-center justify-center h-24 p-4 space-y-2
                       card hover:bg-gray-100 transition cursor-pointer">
-            <p class="font-semibold text-lg">Local Game</p>
+            <p class="text-section-title">Local Game</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-keyboard-icon lucide-keyboard"><path d="M10 8h.01"/><path d="M12 12h.01"/><path d="M14 8h.01"/><path d="M16 12h.01"/><path d="M18 8h.01"/><path d="M6 8h.01"/><path d="M7 16h10"/><path d="M8 12h.01"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg>
           </div>
         </a>
@@ -162,7 +163,7 @@
         <a href="remote.html" class="block">
           <div class="flex flex-col items-center justify-center h-24 p-4 space-y-2
                       card hover:bg-gray-100 transition cursor-pointer">
-            <p class="font-semibold text-lg">Remote Game</p>
+            <p class="text-section-title">Remote Game</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
           </div>
         </a>
@@ -170,7 +171,7 @@
         <a href="tournament.html" class="block">
           <div class="flex flex-col items-center justify-center h-24 p-4 space-y-2
                       card hover:bg-gray-100 transition cursor-pointer">
-            <p class="font-semibold text-lg">Tournament</p>
+            <p class="text-section-title">Tournament</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>
           </div>
         </a>

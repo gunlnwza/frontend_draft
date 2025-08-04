@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.card {
-    @apply bg-white border border-neutral-300 rounded-xl shadow-sm;
-}
+.card { @apply bg-white border border-neutral-300 rounded-xl shadow-sm; }
+
+.text-sitename { @apply text-3xl font-bold text-gray-800; }
+.text-username { @apply text-3xl font-bold text-gray-800; }
+
+.text-title-lg { @apply text-gray-800 font-bold text-xl; }
+.text-label-sm { @apply text-gray-800 font-medium; }
+.text-label-md { @apply text-gray-800 font-bold; }
+
+
+.text-section-title { @apply text-gray-800 font-bold text-xl; }
+
+.text-stat-label { @apply text-neutral-500 text-sm; }
+.text-stat-value { @apply text-lg font-semibold; }
+
+.text-other-user { @apply text-teal-700 hover:underline; }
+.text-win { @apply text-green-600 font-medium; }
+.text-loss { @apply  text-red-500 font-medium; }
