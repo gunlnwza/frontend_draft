@@ -2,21 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.card { @apply bg-white border border-neutral-300 rounded-xl shadow-sm; }
+/* Colors */
+.red { @apply text-red-400; }
+.green { @apply text-green-400; }
 
-.text-sitename { @apply text-3xl font-bold text-gray-800; }
-.text-username { @apply text-3xl font-bold text-gray-800; }
+/* Card */
+.card { @apply p-4 border border-[#444] rounded bg-[#1a1a1a]; }
+.card-title { @apply pb-2 border-b border-[#444]; }
+.card-box { @apply p-2 border border-[#444]; }
 
-.text-title-lg { @apply text-gray-800 font-bold text-xl; }
-.text-label-sm { @apply text-gray-800 font-medium; }
-.text-label-md { @apply text-gray-800 font-bold; }
+/* Other / Not-grouped-yet */
+.text-label { @apply text-gray-400; }
 
-
-.text-section-title { @apply text-gray-800 font-bold text-xl; }
-
-.text-stat-label { @apply text-neutral-500 text-sm; }
-.text-stat-value { @apply text-lg font-semibold; }
-
-.text-other-user { @apply text-teal-700 hover:underline; }
-.text-win { @apply text-green-600 font-medium; }
-.text-loss { @apply  text-red-500 font-medium; }
+.game-log-row {
+    @apply flex justify-between px-4 py-2;
+}
