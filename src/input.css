@@ -14,6 +14,10 @@
 /* Other / Not-grouped-yet */
 .text-label { @apply text-gray-400; }
 
-.game-log-row {
-    @apply flex justify-between px-4 py-2;
+.rows-container {
+    @apply divide-y divide-[#333];
 }
+
+.row-item { @apply py-2; }
+.friends-row-item { @apply row-item; }
+.game-log-row-item { @apply flex justify-between px-4 row-item; }

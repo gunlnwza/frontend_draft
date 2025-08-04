@@ -8,57 +8,68 @@
 </head>
 <body class="bg-black text-[#eee] font-mono text-sm">
 
-    <!-- FRIEND Sidebar -->
-    <section>
-        <header class="card"></header>
-    </section>
-
-    <!-- Main Area -->
-    <div>
-        <!-- FT_TRANSCENDENCE Card -->
-        <section class="card m-4 space-y-4">
-            <header class="card-title tracking-widest">FT_TRANSCENDENCE</header>
-
-            <div class="grid grid-cols-2 gap-4">
-                <div class="card-box">
-                    <p class="text-label">USERNAME</p>
-                    <p>nteechar</p>
-                </div>
-                <div class="card-box">
-                    <p class="text-label">RANK</p>
-                    <p>#42</p>
-                </div>
-            </div>
-        </section>
+    <main class="flex">
+        <!-- FRIEND Sidebar -->
+        <aside class="card  w-64 h-screen">
+            <header class="card-title">FRIENDS</header>
     
-        <!-- > GAME LOG Card -->
-        <section class="card m-4">
-            <header class="card-title">> GAME LOG</header>
-
             <div class="divide-y divide-[#333]">
-                <div class="game-log-row">
-                    <span>opponent_minirt</span>
-                    <span class="green">WIN</span>
-                </div>
-                <div class="game-log-row">
-                    <span>opponent_minishell</span>
-                    <span class="red">LOSS</span>
-                </div>
-                <div class="game-log-row">
-                    <span>opponent_fractol</span>
-                    <span class="green">WIN</span>
-                </div>
-                <div class="game-log-row">
-                    <span>opponent_get-next-line</span>
-                    <span class="red">LOSS</span>
-                </div>
-                <div class="game-log-row">
-                    <span>opponent_libft</span>
-                    <span class="green">WIN</span>
-                </div>
+                <div class="friends-row-item"><span>opponent_minirt</span></div>
+                <div class="friends-row-item"><span>opponent_minishell</span></div>
+                <div class="friends-row-item"><span>opponent_fractol</span></div>
+                <div class="friends-row-item"><span>opponent_get-next-line</span></div>
+                <div class="friends-row-item"><span>opponent_libft</span></div>
             </div>
+        </aside>
+    
+        <!-- Main Area -->
+        <section class="flex-1 p-4 space-y-4">
+            <!-- FT_TRANSCENDENCE Card -->
+            <section class="card space-y-4">
+                <header class="card-title tracking-widest">FT_TRANSCENDENCE</header>
+    
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="card-box">
+                        <p class="text-label">USERNAME</p>
+                        <p>nteechar</p>
+                    </div>
+                    <div class="card-box">
+                        <p class="text-label">RANK</p>
+                        <p>#42</p>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- > GAME LOG Card -->
+            <section class="card">
+                <header class="card-title">> GAME LOG</header>
+    
+                <div class="rows-container">
+                    <div class="game-log-row-item">
+                        <span>opponent_minirt</span>
+                        <span class="green">WIN</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_minishell</span>
+                        <span class="red">LOSS</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_fractol</span>
+                        <span class="green">WIN</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_get-next-line</span>
+                        <span class="red">LOSS</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_libft</span>
+                        <span class="green">WIN</span>
+                    </div>
+                </div>
+            </section>
         </section>
-    </div>
+
+    </main>
 
 </body>
 </html>
