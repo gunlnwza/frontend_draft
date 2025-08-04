@@ -10,6 +10,7 @@
 .card { @apply p-4 border border-[#444] rounded bg-[#1a1a1a]; }
 .card-title { @apply pb-2 border-b border-[#444]; }
 .card-box { @apply p-2 border border-[#444]; }
+.card-button { @apply card cursor-pointer hover:bg-[#2a2a2a] transition; }
 
 /* Other / Not-grouped-yet */
 .text-label { @apply text-gray-400; }
