@@ -23,5 +23,7 @@
 }
 
 .row-item { @apply py-2; }
+.row-item-indent { @apply row-item flex justify-between px-4; }
+
 .friends-row-item { @apply row-item; }
-.game-log-row-item { @apply flex justify-between px-4 row-item; }
+.game-log-row-item { @apply row-item-indent; }
