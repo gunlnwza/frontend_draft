@@ -10,7 +10,7 @@
 
     <main class="flex">
         <!-- FRIEND Sidebar -->
-        <aside class="card  w-64 h-screen">
+        <aside class="card w-64 h-screen">
             <header class="card-title">FRIENDS</header>
 
             <div class="rows-container">
@@ -28,14 +28,24 @@
             <section class="card space-y-4">
                 <header class="card-title tracking-widest">FT_TRANSCENDENCE</header>
     
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="card-box">
-                        <p class="text-label">USERNAME</p>
-                        <p>nteechar</p>
+                <div class="flex gap-3">
+                    <!-- Picture -->
+                    <div class="relative inline-block w-36 h-36 flex-shrink-0">
+                        <img class="w-full h-full object-cover rounded-md" src="/assets/cute-cat.jpg" alt="User avatar">
+                        <span class="absolute bottom-0 right-0 block w-3 h-3 bg-green-500 rounded-full ring-2 ring-white"></span>
                     </div>
-                    <div class="card-box">
-                        <p class="text-label">RANK</p>
-                        <p>#42</p>
+                    
+                    <!-- Info -->
+                    <div class="flex-1 space-y-2">
+                        <div class="card-box">
+                            <p class="text-label">USERNAME</p>
+                            <p>nteechar</p>
+                        </div>
+                        
+                        <div class="card-box">
+                            <p class="text-label">RANK</p>
+                            <p>#42</p>
+                        </div>
                     </div>
                 </div>
             </section>
