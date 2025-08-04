@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* General */
-.body { @apply bg-[black] text-[#eee] font-mono text-sm; }
+.body { @apply bg-black text-[#eee] font-mono text-sm; }
 
 /* Colors */
 .red { @apply text-red-400; }

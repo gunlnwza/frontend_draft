@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ft_transcendence</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="body">
+
+    <!-- Header-->
+    <div class="flex gap-4 justify-between align-middle p-4 border-b border-[#444] rounded bg-[#1a1a1a]">
+        <!-- Site name -->
+        <header class="tracking-widest text-xl">FT_TRANSCENDENCE</header>
+
+        <!-- Right side -->
+        <div class="flex items-center gap-4">
+            <!-- Gear: setting -->
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg> -->
+        
+            <!-- Login name, dropdown menu -->
+             <div class="relative group inline-block p-1">
+                <span class="cursor-pointer">nteechar ▾</span>
+
+                <!-- Dropdown menu -->
+                <div class="absolute right-0 w-40 bg-[#2a2a2a] rounded shadow-lg divide-y divide-[#444] hidden group-hover:block z-10">
+                    <a href="#" class="block px-4 py-3 text-sm text-white hover:bg-[#444]">Settings</a>
+                    <a href="login.html" class="block px-4 py-3 text-sm text-red-400 hover:bg-[#444]">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex">
+        <!-- FRIEND Sidebar -->
+        <aside class="p-4 border-r border-[#444] bg-[#1a1a1a] w-64 min-h-screen">
+            <header class="card-title">FRIENDS</header>
+
+            <div class="rows-container">
+                <div class="friends-row-item"><span>opponent_minirt</span></div>
+                <div class="friends-row-item"><span>opponent_minishell</span></div>
+                <div class="friends-row-item"><span>opponent_fractol</span></div>
+                <div class="friends-row-item"><span>opponent_get-next-line</span></div>
+                <div class="friends-row-item"><span>opponent_libft</span></div>
+            </div>
+        </aside>
+
+        <!-- Main Area -->
+        <section class="flex-1 p-4 space-y-4">
+            <!-- FT_TRANSCENDENCE Card -->
+            <section class="card space-y-4">
+                <header class="card-title">> USER</header>
+    
+                <div class="flex gap-3">
+                    <!-- Picture -->
+                    <div class="relative inline-block w-36 h-36 flex-shrink-0">
+                        <img class="w-full h-full object-cover rounded-md" src="/assets/cute-cat.jpg" alt="User avatar">
+                        <span class="absolute bottom-0 right-0 block w-3 h-3 bg-green-500 rounded-full ring-2 ring-white"></span>
+                    </div>
+                    
+                    <!-- Info -->
+                    <div class="flex-1 space-y-2">
+                        <div class="card-box">
+                            <p class="text-label">USERNAME</p>
+                            <p>nteechar</p>
+                        </div>
+                        
+                        <div class="card-box">
+                            <p class="text-label">RANK</p>
+                            <p>#42</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Play games button -->
+            <section class="grid grid-cols-3">
+                <a href="local.html" class="card-button text-center mr-1.5">
+                    <div>
+                        <span>LOCAL</span>
+                        <svg class="mx-auto h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-keyboard-icon lucide-keyboard"><path d="M10 8h.01"/><path d="M12 12h.01"/><path d="M14 8h.01"/><path d="M16 12h.01"/><path d="M18 8h.01"/><path d="M6 8h.01"/><path d="M7 16h10"/><path d="M8 12h.01"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg>
+                    </div>
+                </a>
+                <a href="remote.html" class="card-button text-center mx-1.5">
+                    <div>
+                        <span>REMOTE</span>
+                        <svg class="mx-auto h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                </a>
+                <a href="tournament.html" class="card-button text-center ml-1.5">
+                    <div>
+                        <span>TOURNAMENT</span>
+                        <svg class="mx-auto h-10" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trophy-icon lucide-trophy"><path d="M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978"/><path d="M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978"/><path d="M18 9h1.5a1 1 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6 9H4.5a1 1 0 0 1 0-5H6"/></svg>
+                    </div>
+                </a>
+            </section>
+
+            <!-- STAT Card -->
+            <section class="card">
+                <header class="card-title">> STATS</header>
+
+                <div class="rows-container">
+                    <div class="row-item-indent">
+                        <span>WIN</span>
+                        <span>42</span>
+                    </div>
+                    <div class="row-item-indent">
+                        <span>LOSS</span>
+                        <span>8</span>
+                    </div>
+                    <div class="row-item-indent">
+                        <span>WIN RATE</span>
+                        <span>84%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- > GAME LOG Card -->
+            <section class="card">
+                <header class="card-title">> GAME LOG</header>
+    
+                <div class="rows-container">
+                    <div class="game-log-row-item">
+                        <span>opponent_minirt</span>
+                        <span class="green">WIN</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_minishell</span>
+                        <span class="red">LOSS</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_fractol</span>
+                        <span class="green">WIN</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_get-next-line</span>
+                        <span class="red">LOSS</span>
+                    </div>
+                    <div class="game-log-row-item">
+                        <span>opponent_libft</span>
+                        <span class="green">WIN</span>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <!-- Hidden sprite sheets -->
+    <!-- <div hidden>
+        <svg xmlns="https://www.w3.org/2000/svg" style="display: none;">
+
+        </svg>
+    </div> -->
+
+</body>
+</html>
