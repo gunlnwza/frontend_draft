@@ -33,7 +33,7 @@
 
 /* Card, part of the bento-box-type page */
 .card           { @apply p-4 border border-[#444] rounded bg-[#1a1a1a]; }
-.card-title     { @apply pb-2 border-b border-[#444] font-bold; }
+.card-title     { @apply pb-2 border-b border-[#444] font-bold text-lg; }
 .card-field     { @apply p-2 border border-[#444]; }
 .card-button    { @apply card text-center cursor-pointer hover:bg-[#2a2a2a] transition; }
 
