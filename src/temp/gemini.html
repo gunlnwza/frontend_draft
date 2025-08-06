@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-Player Tournament</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-4xl w-full">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">4-Player Tournament</h1>
+
+        <!-- Player Input and List Section -->
+        <div id="player-setup" class="mb-8 p-6 bg-gray-50 rounded-xl">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Add Players</h2>
+            <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                <input type="text" id="player-name-input" placeholder="Enter player name" class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                <button id="add-player-btn" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors disabled:bg-gray-400">Add Player</button>
+            </div>
+            <div id="player-list-container" class="mt-4">
+                <h3 class="text-lg font-medium text-gray-600 mb-2">Players Added (<span id="player-count">0</span>/4):</h3>
+                <ul id="player-list" class="space-y-2">
+                    <!-- Player list items will be inserted here -->
+                </ul>
+            </div>
+            <div class="mt-6 flex justify-center">
+                <button id="start-tournament-btn" class="bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-green-700 transition-colors disabled:bg-gray-400" disabled>Start Tournament</button>
+            </div>
+        </div>
+
+        <!-- Tournament Bracket Section -->
+        <div id="tournament-bracket" class="hidden">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Tournament Bracket</h2>
+            
+            <!-- Semi-finals -->
+            <div id="semifinals" class="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+                <!-- Match 1 -->
+                <div class="bg-gray-100 p-4 rounded-xl w-full md:w-1/2 shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-lg text-center text-gray-700 mb-2">Semi-Final 1</h3>
+                    <div id="match-1" class="flex flex-col items-center gap-2">
+                        <div class="player p-2 bg-white rounded-md w-full text-center">Player A</div>
+                        <span class="text-gray-500 font-bold text-sm">vs</span>
+                        <div class="player p-2 bg-white rounded-md w-full text-center">Player B</div>
+                    </div>
+                    <div class="mt-4 flex justify-center gap-2">
+                        <button class="winner-btn bg-yellow-500 text-white py-1 px-4 rounded-md shadow-sm hover:bg-yellow-600 transition-colors" data-match-id="1" data-player-index="0">Winner</button>
+                        <button class="winner-btn bg-yellow-500 text-white py-1 px-4 rounded-md shadow-sm hover:bg-yellow-600 transition-colors" data-match-id="1" data-player-index="1">Winner</button>
+                    </div>
+                </div>
+                <!-- Match 2 -->
+                <div class="bg-gray-100 p-4 rounded-xl w-full md:w-1/2 shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-lg text-center text-gray-700 mb-2">Semi-Final 2</h3>
+                    <div id="match-2" class="flex flex-col items-center gap-2">
+                        <div class="player p-2 bg-white rounded-md w-full text-center">Player C</div>
+                        <span class="text-gray-500 font-bold text-sm">vs</span>
+                        <div class="player p-2 bg-white rounded-md w-full text-center">Player D</div>
+                    </div>
+                    <div class="mt-4 flex justify-center gap-2">
+                        <button class="winner-btn bg-yellow-500 text-white py-1 px-4 rounded-md shadow-sm hover:bg-yellow-600 transition-colors" data-match-id="2" data-player-index="0">Winner</button>
+                        <button class="winner-btn bg-yellow-500 text-white py-1 px-4 rounded-md shadow-sm hover:bg-yellow-600 transition-colors" data-match-id="2" data-player-index="1">Winner</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final -->
+            <div id="final-round" class="mt-12 flex flex-col items-center">
+                <h3 class="font-bold text-2xl text-center text-gray-800 mb-4">Finals</h3>
+                <div class="bg-gray-100 p-6 rounded-xl w-full max-w-sm shadow-md border border-gray-200">
+                    <div id="final-match" class="flex flex-col items-center gap-2">
+                        <div class="finalist p-2 bg-white rounded-md w-full text-center">Winner of SF1</div>
+                        <span class="text-gray-500 font-bold text-sm">vs</span>
+                        <div class="finalist p-2 bg-white rounded-md w-full text-center">Winner of SF2</div>
+                    </div>
+                    <div id="final-winner-btns" class="mt-4 flex justify-center gap-2">
+                        <!-- Final winner buttons will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tournament Winner Display -->
+            <div id="tournament-winner" class="hidden mt-8 text-center p-6 bg-green-100 rounded-xl">
+                <h2 class="text-2xl font-bold text-green-700">🏆 The Winner Is: <span id="winner-name"></span> 🏆</h2>
+            </div>
+            
+            <div class="mt-8 flex justify-center">
+                <button id="reset-btn" class="bg-red-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-red-700 transition-colors">Reset Tournament</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array to hold the players
+        const players = [];
+
+        // DOM element references
+        const playerNameInput = document.getElementById('player-name-input');
+        const addPlayerBtn = document.getElementById('add-player-btn');
+        const playerList = document.getElementById('player-list');
+        const playerCountSpan = document.getElementById('player-count');
+        const startTournamentBtn = document.getElementById('start-tournament-btn');
+        const playerSetupSection = document.getElementById('player-setup');
+        const tournamentBracketSection = document.getElementById('tournament-bracket');
+        const semifinalsSection = document.getElementById('semifinals');
+        const finalMatchEl = document.getElementById('final-match');
+        const finalWinnerBtnsContainer = document.getElementById('final-winner-btns');
+        const tournamentWinnerDisplay = document.getElementById('tournament-winner');
+        const winnerNameSpan = document.getElementById('winner-name');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Initial state of the tournament
+        let matches = [];
+        let finalMatch = null;
+
+        // --- Helper Functions ---
+        
+        // Fisher-Yates shuffle algorithm to randomize an array
+        const shuffleArray = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        };
+
+        // Renders the list of players on the page
+        const renderPlayerList = () => {
+            playerList.innerHTML = '';
+            players.forEach(player => {
+                const li = document.createElement('li');
+                li.className = "bg-white p-3 rounded-md shadow-sm border border-gray-200 text-gray-800";
+                li.textContent = player;
+                playerList.appendChild(li);
+            });
+            playerCountSpan.textContent = players.length;
+            
+            // Enable or disable the start button based on player count
+            startTournamentBtn.disabled = players.length !== 4;
+        };
+
+        // Renders the tournament bracket with players
+        const renderBracket = () => {
+            // Semi-Finals
+            const semifinal1El = document.getElementById('match-1');
+            const semifinal2El = document.getElementById('match-2');
+            
+            semifinal1El.children[0].textContent = matches[0].players[0];
+            semifinal1El.children[2].textContent = matches[0].players[1];
+            
+            semifinal2El.children[0].textContent = matches[1].players[0];
+            semifinal2El.children[2].textContent = matches[1].players[1];
+        };
+
+        // Updates the bracket with a winner's name, moving them to the next round
+        const updateBracket = (matchId, winner) => {
+            if (matchId === 1 || matchId === 2) {
+                // It's a semi-final match, move winner to the final
+                const finalistEl = document.getElementById('final-match').children[matchId - 1];
+                finalistEl.textContent = winner;
+                finalistEl.dataset.winner = winner; // Store the winner for the final match logic
+                finalistEl.classList.add('bg-blue-100', 'text-blue-800');
+
+                // Check if both semi-finals are complete
+                const winner1 = document.getElementById('final-match').children[0].dataset.winner;
+                const winner2 = document.getElementById('final-match').children[2].dataset.winner;
+                
+                if (winner1 && winner2) {
+                    // Both semi-finals are done, create the final match
+                    finalMatch = { players: [winner1, winner2], winner: null };
+                    renderFinalWinnerButtons(winner1, winner2);
+                }
+            } else if (matchId === 'final') {
+                // It's the final match, declare the tournament winner
+                finalMatch.winner = winner;
+                winnerNameSpan.textContent = winner;
+                tournamentWinnerDisplay.classList.remove('hidden');
+            }
+        };
+
+        // Renders the winner buttons for the final match
+        const renderFinalWinnerButtons = (player1, player2) => {
+            finalWinnerBtnsContainer.innerHTML = `
+                <button class="winner-btn-final bg-yellow-500 text-white py-1 px-4 rounded-md shadow-sm hover:bg-yellow-600 transition-colors" data-winner="${player1}">${player1} Wins</button>
+                <button class="winner-btn-final bg-yellow-500 text-white py-1 px-4 rounded-md shadow-sm hover:bg-yellow-600 transition-colors" data-winner="${player2}">${player2} Wins</button>
+            `;
+            // Add event listeners for the new final winner buttons
+            document.querySelectorAll('.winner-btn-final').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const winner = event.target.dataset.winner;
+                    updateBracket('final', winner);
+                    // Hide all winner buttons
+                    document.querySelectorAll('.winner-btn').forEach(btn => btn.disabled = true);
+                    event.target.parentElement.querySelectorAll('button').forEach(btn => btn.disabled = true);
+                });
+            });
+        };
+
+        // --- Event Handlers ---
+        
+        // Handler for the "Add Player" button
+        addPlayerBtn.addEventListener('click', () => {
+            const playerName = playerNameInput.value.trim();
+            if (playerName && players.length < 4) {
+                players.push(playerName);
+                playerNameInput.value = '';
+                renderPlayerList();
+            }
+        });
+
+        // Handler for the "Enter" key on the input field
+        playerNameInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                addPlayerBtn.click();
+            }
+        });
+
+        // Handler for the "Start Tournament" button
+        startTournamentBtn.addEventListener('click', () => {
+            if (players.length === 4) {
+                // Hide player setup and show the bracket
+                playerSetupSection.classList.add('hidden');
+                tournamentBracketSection.classList.remove('hidden');
+                
+                // Shuffle players for random matchups
+                shuffleArray(players);
+
+                // Create the initial matches
+                matches = [
+                    { id: 1, players: [players[0], players[1]], winner: null },
+                    { id: 2, players: [players[2], players[3]], winner: null }
+                ];
+                
+                // Render the initial bracket
+                renderBracket();
+            }
+        });
+
+        // Handler for all "Winner" buttons in the semi-finals
+        semifinalsSection.addEventListener('click', (event) => {
+            if (event.target.classList.contains('winner-btn')) {
+                const matchId = parseInt(event.target.dataset.matchId);
+                const playerIndex = parseInt(event.target.dataset.playerIndex);
+                
+                const match = matches.find(m => m.id === matchId);
+                if (match && !match.winner) {
+                    const winner = match.players[playerIndex];
+                    match.winner = winner;
+                    updateBracket(matchId, winner);
+                    
+                    // Disable winner buttons for the completed match
+                    const matchEl = document.getElementById(`match-${matchId}`);
+                    matchEl.nextElementSibling.querySelectorAll('button').forEach(btn => btn.disabled = true);
+                }
+            }
+        });
+
+        // Handler for the "Reset Tournament" button
+        resetBtn.addEventListener('click', () => {
+            // Reset all state
+            players.length = 0;
+            matches = [];
+            finalMatch = null;
+            
+            // Reset UI
+            renderPlayerList();
+            playerSetupSection.classList.remove('hidden');
+            tournamentBracketSection.classList.add('hidden');
+            tournamentWinnerDisplay.classList.add('hidden');
+            finalWinnerBtnsContainer.innerHTML = '';
+            
+            document.querySelectorAll('.winner-btn').forEach(btn => btn.disabled = false);
+            
+            // Clear finalist names and styles
+            const finalist1 = finalMatchEl.children[0];
+            const finalist2 = finalMatchEl.children[2];
+            finalist1.textContent = 'Winner of SF1';
+            finalist2.textContent = 'Winner of SF2';
+            finalist1.dataset.winner = '';
+            finalist2.dataset.winner = '';
+            finalist1.classList.remove('bg-blue-100', 'text-blue-800');
+            finalist2.classList.remove('bg-blue-100', 'text-blue-800');
+        });
+    </script>
+</body>
+</html>
