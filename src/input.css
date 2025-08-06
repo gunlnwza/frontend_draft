@@ -27,6 +27,7 @@
 .dropdown   { @apply absolute right-0 w-40 hidden z-10 bg-1 rounded shadow-lg dividers-1 group-hover:block; }
 .sidebar    { @apply p-4 w-64 min-h-screen border-r border-[#444] bg-[#1a1a1a]; }  /* assume parent is flex */
 
+/* Dividers: for child */
 .dividers-1 { @apply divide-y divide-[#444]; }
 .dividers-2 { @apply divide-y divide-[#333]; }
 
@@ -43,8 +44,10 @@
 /* Form: is a card with input-able fields */
 .form           { @apply card w-96 flex flex-col items-center space-y-4 mx-auto m-52; }
 .form-field     { @apply bg-[#ddd] rounded-sm p-2 w-full text-black placeholder-[#555]; }
-.form-button    { @apply w-full font-semibold py-2 px-4 rounded bg-[#444] hover:bg-[#555] transition; }
 
+.form-button-base   { @apply w-full font-semibold py-2 px-4 rounded transition; }
+.form-button        { @apply form-button-base bg-[#444] hover:bg-[#555]; }
+.form-button-red    { @apply form-button-base bg-red-700  hover:bg-red-600}
 
 /* [ OTHERS, Not grouped yet ] */
 .row-item           { @apply py-2; } /* might remove */
