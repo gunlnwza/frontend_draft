@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* [ UTILS ] */
 /* Texts */
 .text-normal { @apply font-normal; }
@@ -17,6 +18,7 @@
 .text-cyan      { @apply text-cyan-400; }
 
 .bg-1 { @apply bg-[#2a2a2a]; }
+
 
 /* [ COMPONENTS ] */
 /* General */
@@ -43,7 +45,8 @@
 .form-field     { @apply bg-[#ddd] rounded-sm p-2 w-full text-black placeholder-[#555]; }
 .form-button    { @apply w-full font-semibold py-2 px-4 rounded bg-[#444] hover:bg-[#555] transition; }
 
-/* [ Others, Not-grouped-yet ] */
+
+/* [ OTHERS, Not grouped yet ] */
 .row-item           { @apply py-2; } /* might remove */
 .row-item-indent    { @apply row-item flex justify-between px-4; }
 
